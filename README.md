@@ -63,31 +63,12 @@ The system processes documents, converts them into embeddings, and retrieves rel
 
 ---
 
-## 📂 Project Structure
-retail_ai_advisor/
-│
-├── app/
-│ ├── api/v1/endpoints/
-│ │ ├── upload.py
-│ │ └── query.py
-│ ├── services/
-│ │ ├── ingestion_service.py
-│ │ └── query_service.py
-│ ├── rag/
-│ │ ├── agent.py
-│ │ ├── embeddings.py
-│ │ ├── vector_store.py
-│ │ └── memory.py
-│ ├── utils/
-│ │ ├── chunking.py
-│ │ └── loader.py
-│ └── main.py
-│
-├── ui/
-│ └── streamlit_app.py
-│
-├── data/
-├── .env
-├── .gitignore
-├── pyproject.toml
-└── README.md
+## 💬 Features
+- Upload and process PDF/TXT files  
+- Context-aware question answering  
+- Chat-based UI with history  
+- Modular architecture  
+- Scalable RAG pipeline  
+
+## ⭐ Conclusion
+This project demonstrates a complete implementation of a RAG-based system integrating document processing, vector search, and LLM-based response generation, aligned with real-world AI applications.
