@@ -1,6 +1,8 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from app.rag.memory import get_memory
 
+from app.rag.tools.hybrid_search import hybrid_search
+
 
 def create_agent(retriever):
     llm = ChatGoogleGenerativeAI(
@@ -11,12 +13,18 @@ def create_agent(retriever):
     memory = get_memory()
 
     def run(query: str):
-        
+        """
         docs = retriever.invoke(query)
         context = "\n".join([doc.page_content for doc in docs])
-
+        """
         
+
+        docs = hybrid_search(query)
+
+        context = "\n".join(docs)
+                
         chat_history = memory.load_memory()
+
 
         history_text = "\n".join(
             [f"User: {h['user']}\nAssistant: {h['assistant']}" for h in chat_history]
